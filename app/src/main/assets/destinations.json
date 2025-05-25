@@ -1,0 +1,44 @@
+{
+  "destinations": [
+    {
+      "name": "Paris",
+      "country": "France",
+      "description": "The city of lights and love, known for Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral.",
+      "attractions": [
+        "Eiffel Tower",
+        "Louvre Museum",
+        "Notre-Dame Cathedral"
+      ]
+    },
+    {
+      "name": "Agra",
+      "country": "India",
+      "description": "Home of the Taj Mahal, Agra Fort and Mehtab Bagh.",
+      "attractions": [
+        "Taj Mahal",
+        "Agra Fort",
+        "Mehtab Bagh"
+      ]
+    },
+    {
+      "name": "Tokyo",
+      "country": "Japan",
+      "description": "A bustling metropolis with a mix of traditional culture and modern technology.",
+      "attractions": [
+        "Tokyo Tower",
+        "Senso-ji Temple",
+        "Shibuya Crossing"
+      ]
+    },
+    {
+      "name": "Jaipur",
+      "country": "India",
+      "description": "The Pink City famous for its palaces and forts.",
+      "attractions": [
+        "Hawa Mahal",
+        "Amber Fort",
+        "City Palace"
+      ]
+    }
+  ]
+}
