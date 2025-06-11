@@ -12,30 +12,46 @@ import java.util.List;
 
 public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.ViewHolder> {
 
-    public interface OnItemClickListener {
-        void onItemClick(int position);
-    }
-
     private final List<Destination> destinationList;
     private final OnItemClickListener listener;
 
-    public DestinationAdapter(List<Destination> destinations, OnItemClickListener listener) {
-        this.destinationList = destinations;
+    // Constructor
+    public DestinationAdapter(List<Destination> destinationList, OnItemClickListener listener) {
+        this.destinationList = destinationList;
         this.listener = listener;
+    }
+
+    // ViewHolder class
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView textName;
+        public TextView textCountry;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            textName = itemView.findViewById(R.id.textName);
+            textCountry = itemView.findViewById(R.id.textCountry);
+        }
+
+        public void bind(final Destination destination, final OnItemClickListener listener) {
+            textName.setText(destination.getName());
+            textCountry.setText(destination.getCountry());
+
+            itemView.setOnClickListener(v -> listener.onItemClick(getAdapterPosition()));
+        }
     }
 
     @NonNull
     @Override
     public DestinationAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_destination, parent, false);
-        return new ViewHolder(v, listener);
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_destination, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull DestinationAdapter.ViewHolder holder, int position) {
-        Destination dest = destinationList.get(position);
-        holder.tvName.setText(dest.getName());
-        holder.tvCountry.setText(dest.getCountry());
+        Destination destination = destinationList.get(position);
+        holder.bind(destination, listener);
     }
 
     @Override
@@ -43,22 +59,8 @@ public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.
         return destinationList.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvName, tvCountry;
-
-        public ViewHolder(@NonNull View itemView, OnItemClickListener listener) {
-            super(itemView);
-            tvName = itemView.findViewById(R.id.tvName);
-            tvCountry = itemView.findViewById(R.id.tvCountry);
-
-            itemView.setOnClickListener(v -> {
-                if(listener != null) {
-                    int position = getAdapterPosition();
-                    if(position != RecyclerView.NO_POSITION) {
-                        listener.onItemClick(position);
-                    }
-                }
-            });
-        }
+    // Interface for click events
+    public interface OnItemClickListener {
+        void onItemClick(int position);
     }
 }

@@ -1,44 +1,191 @@
-{
-  "destinations": [
-    {
-      "name": "Paris",
-      "country": "France",
-      "description": "The city of lights and love, known for Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral.",
-      "attractions": [
-        "Eiffel Tower",
-        "Louvre Museum",
-        "Notre-Dame Cathedral"
-      ]
-    },
-    {
-      "name": "Agra",
-      "country": "India",
-      "description": "Home of the Taj Mahal, Agra Fort and Mehtab Bagh.",
-      "attractions": [
-        "Taj Mahal",
-        "Agra Fort",
-        "Mehtab Bagh"
-      ]
-    },
-    {
-      "name": "Tokyo",
-      "country": "Japan",
-      "description": "A bustling metropolis with a mix of traditional culture and modern technology.",
-      "attractions": [
-        "Tokyo Tower",
-        "Senso-ji Temple",
-        "Shibuya Crossing"
-      ]
-    },
-    {
-      "name": "Jaipur",
-      "country": "India",
-      "description": "The Pink City famous for its palaces and forts.",
-      "attractions": [
-        "Hawa Mahal",
-        "Amber Fort",
-        "City Palace"
-      ]
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "name": "Paris",
+    "country": "France",
+    "description": "The City of Light, famous for its art, fashion, gastronomy, and culture.",
+    "latitude": 48.8566,
+    "longitude": 2.3522,
+    "imageUrl": "https://example.com/images/paris.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Tokyo",
+    "country": "Japan",
+    "description": "A bustling metropolis blending ultra-modern and traditional culture.",
+    "latitude": 35.6895,
+    "longitude": 139.6917,
+    "imageUrl": "https://example.com/images/tokyo.jpg"
+  },
+  {
+    "id": 3,
+    "name": "New York City",
+    "country": "USA",
+    "description": "The Big Apple, known for its skyline, Broadway, and diverse neighborhoods.",
+    "latitude": 40.7128,
+    "longitude": -74.006,
+    "imageUrl": "https://example.com/images/nyc.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Sydney",
+    "country": "Australia",
+    "description": "Famous for its Sydney Opera House and stunning harbor.",
+    "latitude": -33.8688,
+    "longitude": 151.2093,
+    "imageUrl": "https://example.com/images/sydney.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Cape Town",
+    "country": "South Africa",
+    "description": "Known for Table Mountain and beautiful coastal scenery.",
+    "latitude": -33.9249,
+    "longitude": 18.4241,
+    "imageUrl": "https://example.com/images/capetown.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Rome",
+    "country": "Italy",
+    "description": "The Eternal City, with ancient ruins and vibrant street life.",
+    "latitude": 41.9028,
+    "longitude": 12.4964,
+    "imageUrl": "https://example.com/images/rome.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Rio de Janeiro",
+    "country": "Brazil",
+    "description": "Famous for its carnival, beaches, and the Christ the Redeemer statue.",
+    "latitude": -22.9068,
+    "longitude": -43.1729,
+    "imageUrl": "https://example.com/images/rio.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Bangkok",
+    "country": "Thailand",
+    "description": "Known for its vibrant street life and ornate temples.",
+    "latitude": 13.7563,
+    "longitude": 100.5018,
+    "imageUrl": "https://example.com/images/bangkok.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Barcelona",
+    "country": "Spain",
+    "description": "Famous for Gaudí's architecture and beautiful Mediterranean beaches.",
+    "latitude": 41.3851,
+    "longitude": 2.1734,
+    "imageUrl": "https://example.com/images/barcelona.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Dubai",
+    "country": "UAE",
+    "description": "Known for luxury shopping, ultramodern architecture, and lively nightlife.",
+    "latitude": 25.2048,
+    "longitude": 55.2708,
+    "imageUrl": "https://example.com/images/dubai.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Istanbul",
+    "country": "Turkey",
+    "description": "A historic city straddling Europe and Asia with rich culture and cuisine.",
+    "latitude": 41.0082,
+    "longitude": 28.9784,
+    "imageUrl": "https://example.com/images/istanbul.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Moscow",
+    "country": "Russia",
+    "description": "Known for the Kremlin, Red Square, and colorful onion domes.",
+    "latitude": 55.7558,
+    "longitude": 37.6173,
+    "imageUrl": "https://example.com/images/moscow.jpg"
+  },
+  {
+    "id": 13,
+    "name": "San Francisco",
+    "country": "USA",
+    "description": "Famous for the Golden Gate Bridge, tech innovation, and vibrant culture.",
+    "latitude": 37.7749,
+    "longitude": -122.4194,
+    "imageUrl": "https://example.com/images/sf.jpg"
+  },
+  {
+    "id": 14,
+    "name": "London",
+    "country": "United Kingdom",
+    "description": "A cosmopolitan city with iconic landmarks and rich history.",
+    "latitude": 51.5074,
+    "longitude": -0.1278,
+    "imageUrl": "https://example.com/images/london.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Amsterdam",
+    "country": "Netherlands",
+    "description": "Known for its canals, museums, and vibrant nightlife.",
+    "latitude": 52.3676,
+    "longitude": 4.9041,
+    "imageUrl": "https://example.com/images/amsterdam.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Seoul",
+    "country": "South Korea",
+    "description": "A tech-savvy city blending tradition and modern skyscrapers.",
+    "latitude": 37.5665,
+    "longitude": 126.978,
+    "imageUrl": "https://example.com/images/seoul.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Venice",
+    "country": "Italy",
+    "description": "Famous for its canals, gondolas, and Renaissance art.",
+    "latitude": 45.4408,
+    "longitude": 12.3155,
+    "imageUrl": "https://example.com/images/venice.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Santorini",
+    "country": "Greece",
+    "description": "Known for stunning sunsets, whitewashed buildings, and blue domes.",
+    "latitude": 36.3932,
+    "longitude": 25.4615,
+    "imageUrl": "https://example.com/images/santorini.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Cairo",
+    "country": "Egypt",
+    "description": "Home to the Great Pyramids and ancient Egyptian history.",
+    "latitude": 30.0444,
+    "longitude": 31.2357,
+    "imageUrl": "https://example.com/images/cairo.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Maui",
+    "country": "USA",
+    "description": "A tropical paradise with beautiful beaches and volcanic landscapes.",
+    "latitude": 20.7984,
+    "longitude": -156.3319,
+    "imageUrl": "https://example.com/images/maui.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Queenstown",
+    "country": "New Zealand",
+    "description": "Adventure capital with stunning lakes and mountain scenery.",
+    "latitude": -45.0312,
+    "longitude": 168.6626,
+    "imageUrl": "https://example.com/images/queenstown.jpg"
+  }
+]
