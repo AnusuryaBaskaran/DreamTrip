@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tripDetailsLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editTextDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="description"
+            android:hint="@string/description3"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:padding="12dp"
+            android:layout_marginBottom="20dp" />
+
+        <EditText
+            android:id="@+id/editTextTripName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="trip name"
+            android:hint="@string/trip_name2"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/editTextDestination"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="destination"
+            android:hint="@string/destination3"
+            android:inputType="textPostalAddress"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/editTextStartDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="start date"
+            android:hint="@string/start_date_jan_01_2025"
+            android:inputType="text"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            tools:ignore="TextFields" />
+
+        <EditText
+            android:id="@+id/editTextEndDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="end date"
+            android:hint="@string/end_date_jan_01_2026"
+            android:inputType="text"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            tools:ignore="TextFields" />
+
+        <EditText
+            android:id="@+id/editTextNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="notes"
+            android:hint="@string/notes_optional1"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:padding="12dp"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/buttonSaveTrip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save_trip1" />
+
+        <!-- Share as Text -->
+        <Button
+            android:id="@+id/btnShareText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/share_trip_as_text"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Share as Screenshot -->
+        <Button
+            android:id="@+id/btnShareScreenshot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/share_trip_as_screenshot"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/buttonViewTrips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/view_saved_trips" />
+
+
+    </LinearLayout>
+</ScrollView>
