@@ -30,9 +30,15 @@ public class TripsAdapter extends RecyclerView.Adapter<TripsAdapter.TripViewHold
     @Override
     public void onBindViewHolder(@NonNull TripViewHolder holder, int position) {
         Trip trip = tripList.get(position);
-        holder.tripName.setText(trip.getTripName());
-        holder.destination.setText("Destination: " + trip.getDestination());
-        holder.dates.setText("Dates: " + trip.getStartDate() + " to " + trip.getEndDate());
+
+        String tripName = trip.getTripName() != null ? trip.getTripName() : "Unnamed Trip";
+        String destination = trip.getDestination() != null ? trip.getDestination() : "Unknown Destination";
+        String startDate = TripListActivity.convertMillisToDate(trip.getStartDate());
+        String endDate = TripListActivity.convertMillisToDate(trip.getEndDate());
+
+        holder.tripName.setText(tripName);
+        holder.destination.setText("Destination: " + destination);
+        holder.dates.setText("Dates: " + startDate + " to " + endDate);
     }
 
     @Override

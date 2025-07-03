@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chatLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:importantForAccessibility="yes"
+    android:contentDescription="@string/ai_chat_assistant_screen">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/chat_history_area"
+        android:importantForAccessibility="yes">
+
+        <LinearLayout
+            android:id="@+id/messageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="8dp">
+
+        <EditText
+            android:id="@+id/userInput"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:autofillHints="user_input"
+            android:hint="@string/ask_me_anything"
+            android:inputType="text"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background_normal"
+            android:importantForAccessibility="yes"
+            tools:ignore="ContentDescription" />
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="@string/send"
+            android:minWidth="0dp"
+            android:minHeight="48dp"
+            android:importantForAccessibility="yes"
+            android:contentDescription="@string/send_button" />
+    </LinearLayout>
+</LinearLayout>

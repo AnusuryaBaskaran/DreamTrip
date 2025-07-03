@@ -1,5 +1,6 @@
 package com.example.dreamtrip;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.airbnb.lottie.LottieAnimationView;
+import com.airbnb.lottie.LottieDrawable;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -31,6 +34,12 @@ public class LoginActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.passwordEditText);
         Button loginButton = findViewById(R.id.loginButton);
         TextView goToRegisterText = findViewById(R.id.goToRegisterText);
+
+        //lottie
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) LottieAnimationView lottieBackground = findViewById(R.id.lottieBackground);
+        lottieBackground.setAnimation("loginbg.json"); // Make sure this file is in assets folder
+        lottieBackground.playAnimation();
+        lottieBackground.setRepeatCount(LottieDrawable.INFINITE);
 
         loginButton.setOnClickListener(v -> loginUser());
 
@@ -73,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
-            startActivity(new Intent(LoginActivity.this, MainActivity2.class));
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
             finish();
         }
     }

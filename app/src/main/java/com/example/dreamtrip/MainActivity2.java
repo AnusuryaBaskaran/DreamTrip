@@ -10,6 +10,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.airbnb.lottie.LottieAnimationView;
+import com.airbnb.lottie.LottieDrawable;
+
 import java.util.ArrayList;
 
 public class MainActivity2 extends AppCompatActivity{
@@ -24,6 +27,12 @@ public class MainActivity2 extends AppCompatActivity{
             ListView listView = findViewById(R.id.listView);
             Button btnPlanTrip = findViewById(R.id.btnPlanTrip);
             Button buttonSaveTrip = findViewById(R.id.buttonSaveTrip);
+
+            // Lottie animation view
+            LottieAnimationView lottieBackground = findViewById(R.id.lottieBackground);
+            lottieBackground.setAnimation("destbg.json"); // Make sure this file is in assets folder
+            lottieBackground.playAnimation();
+            lottieBackground.setRepeatCount(LottieDrawable.INFINITE);
 
             // Initialize destinations list
             destinations = new ArrayList<>();

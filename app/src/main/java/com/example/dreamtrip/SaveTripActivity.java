@@ -15,6 +15,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
+import com.airbnb.lottie.LottieAnimationView;
+import com.airbnb.lottie.LottieDrawable;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.File;
@@ -56,6 +58,13 @@ public class SaveTripActivity extends AppCompatActivity {
         Button btnShareText = findViewById(R.id.btnShareText);
         Button btnShareScreenshot = findViewById(R.id.btnShareScreenshot);
         Button buttonViewTrips = findViewById(R.id.buttonViewTrips);
+
+        // Lottie animation view
+        LottieAnimationView lottieBackground = findViewById(R.id.lottieBackground);
+        lottieBackground.setAnimation("savedtrips.json"); // Make sure this file is in assets folder
+        lottieBackground.playAnimation();
+        lottieBackground.setRepeatCount(LottieDrawable.INFINITE);
+
 
         // Set listeners
         buttonSaveTrip.setOnClickListener(view -> saveTripToFirestore());

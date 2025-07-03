@@ -1,5 +1,6 @@
 package com.example.dreamtrip;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,10 +9,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.airbnb.lottie.LottieAnimationView;
+import com.airbnb.lottie.LottieDrawable;
+
 public class DestinationDetailsActivity extends AppCompatActivity {
 
     private Destination destination;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,8 +25,16 @@ public class DestinationDetailsActivity extends AppCompatActivity {
         TextView textName = findViewById(R.id.textName);
         TextView textCountry = findViewById(R.id.textCountry);
         TextView textDescription = findViewById(R.id.textDescription);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextView textWeather = findViewById(R.id.textWeather); // Add in XML
         Button buttonPlanTrip = findViewById(R.id.buttonPlanTrip);
-        Button buttonViewMap = findViewById(R.id.buttonViewMap); // Add this button in XML
+        Button buttonViewMap = findViewById(R.id.buttonViewMap);
+
+        // Lottie animation view
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) LottieAnimationView lottieBackground = findViewById(R.id.lottieBackground);
+        lottieBackground.setAnimation("destdetails.json"); // Make sure this file is in assets folder
+        lottieBackground.playAnimation();
+        lottieBackground.setRepeatCount(LottieDrawable.INFINITE);
+
 
         destination = (Destination) getIntent().getSerializableExtra("destination");
 
@@ -29,6 +42,10 @@ public class DestinationDetailsActivity extends AppCompatActivity {
             textName.setText(destination.getName());
             textCountry.setText(destination.getCountry());
             textDescription.setText(destination.getDescription());
+
+            // Show weather
+            String weather = WeatherHelper.getWeather(destination.getName());
+            textWeather.setText("Expected Weather: " + weather);
 
             buttonPlanTrip.setOnClickListener(v -> {
                 Intent intent = new Intent(DestinationDetailsActivity.this, SaveTripActivity.class);

@@ -1,83 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="24dp">
+    android:layout_height="wrap_content">
 
-    <LinearLayout
+    <!-- Lottie background animation -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:focusable="false"
+        android:scaleType="fitEnd"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="plan.json"
+        app:lottie_loop="true" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:padding="24dp">
 
-        <EditText
-            android:id="@+id/editDestination"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:minHeight="48dp"
-            android:padding="12dp"
-            android:hint="@string/enter_destination_e_g_paris"
-            android:importantForAutofill="yes"
-            android:autofillHints="postalAddress" />
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/editDates"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:minHeight="48dp"
-            android:padding="12dp"
-            android:hint="@string/enter_travel_dates_e_g_2025_06_01_to_2025_06_07"
-            android:layout_marginTop="12dp"
-            android:importantForAutofill="yes"
-            android:autofillHints="date" />
+            <EditText
+                android:id="@+id/editDestination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="postalAddress"
+                android:hint="@string/enter_destination_e_g_paris"
+                android:importantForAutofill="yes"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:padding="12dp" />
 
-        <EditText
-            android:id="@+id/editBudget"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:padding="12dp"
-            android:hint="@string/enter_budget_e_g_1000_usd1"
-            android:inputType="number"
-            android:layout_marginTop="12dp"
-            android:importantForAutofill="yes"
-            android:autofillHints="creditCardNumber" />
+            <EditText
+                android:id="@+id/editDates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:autofillHints="date"
+                android:hint="@string/enter_travel_dates_e_g_2025_06_01_to_2025_06_07"
+                android:importantForAutofill="yes"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:padding="12dp" />
 
-        <EditText
-            android:id="@+id/editInterests"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:minHeight="48dp"
-            android:padding="12dp"
-            android:hint="@string/enter_interests_e_g_culture_food_adventure1"
-            android:layout_marginTop="12dp"
-            android:importantForAutofill="yes"
-            android:autofillHints="username" />
+            <EditText
+                android:id="@+id/editBudget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:autofillHints="creditCardNumber"
+                android:hint="@string/enter_budget_e_g_1000_usd1"
+                android:importantForAutofill="yes"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:padding="12dp" />
 
-        <Button
-            android:id="@+id/btnGeneratePlan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:padding="12dp"
-            android:text="@string/generate_trip_plan1"
-            android:layout_marginTop="20dp" />
+            <EditText
+                android:id="@+id/editInterests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:autofillHints="username"
+                android:hint="@string/enter_interests_e_g_culture_food_adventure1"
+                android:importantForAutofill="yes"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:padding="12dp" />
 
-        <TextView
-            android:id="@+id/responseText"
-            android:layout_width="match_parent"
-            android:layout_height="275dp"
-            android:layout_marginTop="24dp"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            <Button
+                android:id="@+id/btnGeneratePlan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:text="@string/generate_trip_plan1" />
 
-        <Button
-            android:id="@+id/buttonSaveTrip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/save_trip2" />
+            <TextView
+                android:id="@+id/responseText"
+                android:layout_width="match_parent"
+                android:layout_height="275dp"
+                android:layout_marginTop="24dp"
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
-    </LinearLayout>
-</ScrollView>
+            <Button
+                android:id="@+id/buttonSaveTrip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/save_trip2" />
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

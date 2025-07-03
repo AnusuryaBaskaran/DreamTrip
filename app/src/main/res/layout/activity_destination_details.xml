@@ -1,5 +1,21 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Lottie background animation -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:focusable="false"
+        android:scaleType="fitEnd"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="destdetails.json"
+        app:lottie_loop="true" />
+    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -36,6 +52,14 @@
         android:text="@string/view_on_map"
         android:layout_marginTop="16dp"/>
 
+    <TextView
+        android:id="@+id/textWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/expected_weather"
+        android:textSize="16sp"
+        android:layout_marginTop="12dp"/>
+
     <Button
         android:id="@+id/buttonPlanTrip"
         android:layout_width="wrap_content"
@@ -44,3 +68,4 @@
         android:layout_marginTop="20dp"/>
 
 </LinearLayout>
+</FrameLayout>

@@ -14,7 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 public class TripListActivity extends AppCompatActivity {
 
@@ -55,9 +58,14 @@ public class TripListActivity extends AppCompatActivity {
                     if (!queryDocumentSnapshots.isEmpty()) {
                         for (DocumentSnapshot snapshot : queryDocumentSnapshots) {
                             Trip trip = snapshot.toObject(Trip.class);
-                            if (trip != null) {
+                            if (trip != null
+                                    && trip.getDestination() != null
+                                    && trip.getStartDate() > 0
+                                    && trip.getEndDate() > 0) {
                                 tripList.add(trip);
                                 Log.d(TAG, "Trip loaded: " + trip.getTripName());
+                            } else {
+                                Log.w(TAG, "Skipped invalid trip data: " + snapshot.getId());
                             }
                         }
                         tripsAdapter.notifyDataSetChanged();
@@ -75,5 +83,12 @@ public class TripListActivity extends AppCompatActivity {
                     emptyMessage.setVisibility(View.VISIBLE);
                     progressBar.setVisibility(View.GONE);
                 });
+    }
+
+    // Utility method to convert milliseconds to readable date
+    public static String convertMillisToDate(long millis) {
+        if (millis <= 0) return "N/A";
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        return sdf.format(new Date(millis));
     }
 }

@@ -1,6 +1,12 @@
 package com.example.dreamtrip;
 
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
+
+import com.airbnb.lottie.LottieAnimationView;
+import com.airbnb.lottie.LottieDrawable;
 
 import java.io.Serializable;
 
@@ -13,6 +19,7 @@ public class TripPlan implements Serializable {
     private String destination;
     private String date;
     private String notes;
+
 
     // Required empty constructor for Firebase
     public TripPlan() {}
